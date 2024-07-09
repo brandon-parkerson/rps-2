@@ -1,6 +1,5 @@
-//let computerChoice = getComputerChoice(1,3);
-let humanScore = 0;
-let computerScore = 0;
+
+
 
 
 function getComputerChoice(min, max) {
@@ -35,49 +34,66 @@ function getUserChoice() {
 
 
 
-
-
-function playRound(userChoice, getComputerChoice) {
-    if (userChoice == "rock" && getComputerChoice == "rock") {
-        console.log("Tie!");
-    }
-    else if (userChoice == "rock" && getComputerChoice == "paper") {
-        console.log("You Lose!");
-        computerScore = computerScore + 1;
-    }
-    else if (userChoice == "rock" && getComputerChoice == "scissors") {
-        console.log("You Win!");
-        humanScore = humanScore + 1;
-    }
-    else if (userChoice == "paper" && getComputerChoice == "rock") {
-        console.log("You Win!");
-        humanScore = humanScore + 1;
-    }
-    else if (userChoice == "paper" && getComputerChoice == "paper") {
-        console.log("Tie!");
-    }
-    else if (userChoice == "paper" && getComputerChoice == "scissors") {
-        console.log("You Lose!");
-        computerScore = computerScore + 1;
-    }
-    else if (userChoice == "scissors" && getComputerChoice == "rock") {
-        console.log("You Lose!");
-        computerScore = computerScore + 1;
-    }
-    else if (userChoice == "scissors" && getComputerChoice == "paper") {
-        console.log("You Win!");
-        humanScore = humanScore + 1;
-    }
-    else if (userChoice == "scissors"&& getComputerChoice == "scissors") {
-        console.log("Tie!");
-    }
-}
-
 function playGame() {
+    let humanScore = 0;
+    let computerScore = 0;
+    function playRound(userChoice, getComputerChoice) {
+        if (userChoice == "rock" && getComputerChoice == "rock") {
+            console.log("Tie!");
+            console.log(`Your Score: ${humanScore}`);
+            console.log(`Computer Score: ${computerScore}`);
+        }
+        else if (userChoice == "rock" && getComputerChoice == "paper") {
+            console.log("You Lose!");
+            computerScore = computerScore + 1;
+            console.log(`Your Score: ${humanScore}`);
+            console.log(`Computer Score: ${computerScore}`);
+        }
+        else if (userChoice == "rock" && getComputerChoice == "scissors") {
+            console.log("You Win!");
+            humanScore = humanScore + 1;
+            console.log(`Your Score: ${humanScore}`);
+            console.log(`Computer Score: ${computerScore}`);
+        }
+        else if (userChoice == "paper" && getComputerChoice == "rock") {
+            console.log("You Win!");
+            humanScore = humanScore + 1;
+            console.log(`Your Score: ${humanScore}`);
+            console.log(`Computer Score: ${computerScore}`);
+        }
+        else if (userChoice == "paper" && getComputerChoice == "paper") {
+            console.log("Tie!");
+            console.log(`Your Score: ${humanScore}`);
+            console.log(`Computer Score: ${computerScore}`);
+        }
+        else if (userChoice == "paper" && getComputerChoice == "scissors") {
+            console.log("You Lose!");
+            computerScore = computerScore + 1;
+            console.log(`Your Score: ${humanScore}`);
+            console.log(`Computer Score: ${computerScore}`);
+        }
+        else if (userChoice == "scissors" && getComputerChoice == "rock") {
+            console.log("You Lose!");
+            computerScore = computerScore + 1;
+            console.log(`Your Score: ${humanScore}`);
+            console.log(`Computer Score: ${computerScore}`);
+        }
+        else if (userChoice == "scissors" && getComputerChoice == "paper") {
+            console.log("You Win!");
+            humanScore = humanScore + 1;
+            console.log(`Your Score: ${humanScore}`);
+            console.log(`Computer Score: ${computerScore}`);
+        }
+        else if (userChoice == "scissors"&& getComputerChoice == "scissors") {
+            console.log("Tie!");
+            console.log(`Your Score: ${humanScore}`);
+            console.log(`Computer Score: ${computerScore}`);
+        }
+    };
     playRound(getUserChoice(), getComputerChoice(1, 3));
     playRound(getUserChoice(), getComputerChoice(1, 3));
     playRound(getUserChoice(), getComputerChoice(1, 3));
     playRound(getUserChoice(), getComputerChoice(1, 3));
     playRound(getUserChoice(), getComputerChoice(1, 3));
-}
+};
 playGame();
