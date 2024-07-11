@@ -1,4 +1,19 @@
+const container = document.querySelector(".container");
+const rock = document.createElement("button");
+const paper = document.createElement("button");
+const scissors = document.createElement("button");
 
+rock.classList.add("rock");
+paper.classList.add("paper");
+scissors.classList.add("scissors");
+
+rock.innerText = "Rock";
+paper.innerText = "Paper";
+scissors.innerText = "Scissors";
+
+container.appendChild(rock);
+container.appendChild(paper);
+container.appendChild(scissors);
 
 
 
@@ -90,10 +105,6 @@ function playGame() {
             console.log(`Computer Score: ${computerScore}`);
         }
     };
-    playRound(getUserChoice(), getComputerChoice(1, 3));
-    playRound(getUserChoice(), getComputerChoice(1, 3));
-    playRound(getUserChoice(), getComputerChoice(1, 3));
-    playRound(getUserChoice(), getComputerChoice(1, 3));
-    playRound(getUserChoice(), getComputerChoice(1, 3));
+    
 };
 playGame();
