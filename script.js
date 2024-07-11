@@ -5,6 +5,10 @@ const scissors = document.createElement("button");
 const scoreContainer = document.createElement("div");
 const personScore = document.createElement("div");
 const computerScoreContainer = document.createElement("div");
+const winnerContainer = document.createElement("div");
+const computerDecision = document.createElement("div");
+const result = document.createElement("div");
+const gameOver = document.createElement("h1");
 
 
 
@@ -12,6 +16,10 @@ rock.classList.add("rock");
 paper.classList.add("paper");
 scissors.classList.add("scissors");
 scoreContainer.classList.add("score");
+winnerContainer.classList.add("winner");
+computerDecision.classList.add("computer-decision");
+result.classList.add("result");
+gameOver.classList.add("game-over");
 
 
 rock.innerText = "Rock";
@@ -74,73 +82,208 @@ function playGame() {
     
     function playRound(userChoice, getComputerChoice) {
         if (userChoice == "rock" && getComputerChoice == "rock") {
-            console.log("Tie!");
-            console.log(`Your Score: ${humanScore}`);
-            console.log(`Computer Score: ${computerScore}`);
+            result.innerText = "Tie!";
+            computerDecision.innerText = `Computer chose: ${getComputerChoice}`;
+            container.appendChild(result);
+            container.appendChild(computerDecision);
+            
             personScore.innerText = `Your Score: ${humanScore}`;
             computerScoreContainer.innerText = `Computer Score: ${computerScore}`;
+            if (humanScore == 5 || computerScore == 5) {
+                if (humanScore == 5) {
+                    gameOver.innerText = "You Win The Match!";
+                    container.appendChild(gameOver);
+                }
+                else {
+                    gameOver.innerText = "You Lose The Match!";
+                    container.appendChild(gameOver);
+                };
+                
+                winnerContainer.innerText = "Game Over!";
+                container.appendChild(winnerContainer);
+            };
         }
         else if (userChoice == "rock" && getComputerChoice == "paper") {
-            console.log("You Lose!");
+            
+            result.innerText = "You Lose!";
+            computerDecision.innerText = `Computer chose: ${getComputerChoice}`;
+            container.appendChild(result);
+            container.appendChild(computerDecision);
             computerScore = computerScore + 1;
-            console.log(`Your Score: ${humanScore}`);
-            console.log(`Computer Score: ${computerScore}`);
+            
             personScore.innerText = `Your Score: ${humanScore}`;
             computerScoreContainer.innerText = `Computer Score: ${computerScore}`;
+            if (humanScore == 5 || computerScore == 5) {
+                if (humanScore == 5) {
+                    gameOver.innerText = "You Win The Match!";
+                    container.appendChild(gameOver);
+                }
+                else {
+                    gameOver.innerText = "You Lose The Match!";
+                    container.appendChild(gameOver);
+                };
+                winnerContainer.innerText = "Game Over!";
+                container.appendChild(winnerContainer);
+            };
         }
         else if (userChoice == "rock" && getComputerChoice == "scissors") {
-            console.log("You Win!");
+            
+            result.innerText = "You Win!";
+            computerDecision.innerText = `Computer chose: ${getComputerChoice}`;
+            container.appendChild(result);
+            container.appendChild(computerDecision);
             humanScore = humanScore + 1;
-            console.log(`Your Score: ${humanScore}`);
-            console.log(`Computer Score: ${computerScore}`);
+            
             personScore.innerText = `Your Score: ${humanScore}`;
             computerScoreContainer.innerText = `Computer Score: ${computerScore}`;
+            if (humanScore === 5 || computerScore === 5) {
+                if (humanScore == 5) {
+                    gameOver.innerText = "You Win The Match!";
+                    container.appendChild(gameOver);
+                }
+                else {
+                    gameOver.innerText = "You Lose The Match!";
+                    container.appendChild(gameOver);
+                };
+                winnerContainer.innerText = "Game Over!";
+                container.appendChild(winnerContainer);
+            };
         }
         else if (userChoice == "paper" && getComputerChoice == "rock") {
-            console.log("You Win!");
+            
+            result.innerText = "You Win!";
+            computerDecision.innerText = `Computer chose: ${getComputerChoice}`;
+            container.appendChild(result);
+            container.appendChild(computerDecision);
             humanScore = humanScore + 1;
-            console.log(`Your Score: ${humanScore}`);
-            console.log(`Computer Score: ${computerScore}`);
+            
             personScore.innerText = `Your Score: ${humanScore}`;
             computerScoreContainer.innerText = `Computer Score: ${computerScore}`;
+            if (humanScore === 5 || computerScore === 5) {
+                if (humanScore == 5) {
+                    gameOver.innerText = "You Win The Match!";
+                    container.appendChild(gameOver);
+                }
+                else {
+                    gameOver.innerText = "You Lose The Match!";
+                    container.appendChild(gameOver);
+                };
+                winnerContainer.innerText = "Game Over!";
+                container.appendChild(winnerContainer);
+            };
         }
         else if (userChoice == "paper" && getComputerChoice == "paper") {
-            console.log("Tie!");
-            console.log(`Your Score: ${humanScore}`);
-            console.log(`Computer Score: ${computerScore}`);
+            
+            result.innerText = "Tie!";
+            computerDecision.innerText = `Computer chose: ${getComputerChoice}`;
+            container.appendChild(result);
+            container.appendChild(computerDecision);
+            
             personScore.innerText = `Your Score: ${humanScore}`;
             computerScoreContainer.innerText = `Computer Score: ${computerScore}`;
+            if (humanScore === 5 || computerScore === 5) {
+                if (humanScore == 5) {
+                    gameOver.innerText = "You Win The Match!";
+                    container.appendChild(gameOver);
+                }
+                else {
+                    gameOver.innerText = "You Lose The Match!";
+                    container.appendChild(gameOver);
+                };
+                winnerContainer.innerText = "Game Over!";
+                container.appendChild(winnerContainer);
+            };
         }
         else if (userChoice == "paper" && getComputerChoice == "scissors") {
-            console.log("You Lose!");
+            
+            result.innerText = "You Lose!";
+            computerDecision.innerText = `Computer chose: ${getComputerChoice}`;
+            container.appendChild(result);
+            container.appendChild(computerDecision);
             computerScore = computerScore + 1;
-            console.log(`Your Score: ${humanScore}`);
-            console.log(`Computer Score: ${computerScore}`);
+            
             personScore.innerText = `Your Score: ${humanScore}`;
             computerScoreContainer.innerText = `Computer Score: ${computerScore}`;
+            if (humanScore === 5 || computerScore === 5) {
+                if (humanScore == 5) {
+                    gameOver.innerText = "You Win The Match!";
+                    container.appendChild(gameOver);
+                }
+                else {
+                    gameOver.innerText = "You Lose The Match!";
+                    container.appendChild(gameOver);
+                };
+                winnerContainer.innerText = "Game Over!";
+                container.appendChild(winnerContainer);
+            };
         }
         else if (userChoice == "scissors" && getComputerChoice == "rock") {
-            console.log("You Lose!");
+            
+            result.innerText = "You Lose!";
+            computerDecision.innerText = `Computer chose: ${getComputerChoice}`;
+            container.appendChild(result);
+            container.appendChild(computerDecision);
             computerScore = computerScore + 1;
-            console.log(`Your Score: ${humanScore}`);
-            console.log(`Computer Score: ${computerScore}`);
+            
             personScore.innerText = `Your Score: ${humanScore}`;
             computerScoreContainer.innerText = `Computer Score: ${computerScore}`;
+            if (humanScore === 5 || computerScore === 5) {
+                if (humanScore == 5) {
+                    gameOver.innerText = "You Win The Match!";
+                    container.appendChild(gameOver);
+                }
+                else {
+                    gameOver.innerText = "You Lose The Match!";
+                    container.appendChild(gameOver);
+                };
+                winnerContainer.innerText = "Game Over!";
+                container.appendChild(winnerContainer);
+            };
         }
         else if (userChoice == "scissors" && getComputerChoice == "paper") {
-            console.log("You Win!");
+            
+            result.innerText = "You Win!";
+            computerDecision.innerText = `Computer chose: ${getComputerChoice}`;
+            container.appendChild(result);
+            container.appendChild(computerDecision);
             humanScore = humanScore + 1;
-            console.log(`Your Score: ${humanScore}`);
-            console.log(`Computer Score: ${computerScore}`);
+            
             personScore.innerText = `Your Score: ${humanScore}`;
             computerScoreContainer.innerText = `Computer Score: ${computerScore}`;
+            if (humanScore === 5 || computerScore === 5) {
+                if (humanScore == 5) {
+                    gameOver.innerText = "You Win The Match!";
+                    container.appendChild(gameOver);
+                }
+                else {
+                    gameOver.innerText = "You Lose The Match!";
+                    container.appendChild(gameOver);
+                };
+                winnerContainer.innerText = "Game Over!";
+                container.appendChild(winnerContainer);
+            };
         }
         else if (userChoice == "scissors"&& getComputerChoice == "scissors") {
-            console.log("Tie!");
-            console.log(`Your Score: ${humanScore}`);
-            console.log(`Computer Score: ${computerScore}`);
+            
+            result.innerText = "Tie!";
+            computerDecision.innerText = `Computer chose: ${getComputerChoice}`;
+            container.appendChild(result);
+            container.appendChild(computerDecision);
+            
             personScore.innerText = `Your Score: ${humanScore}`;
             computerScoreContainer.innerText = `Computer Score: ${computerScore}`;
+            if (humanScore === 5 || computerScore === 5) {
+                if (humanScore == 5) {
+                    gameOver.innerText = "You Win The Match!";
+                    container.appendChild(gameOver);
+                }
+                else {
+                    gameOver.innerText = "You Lose The Match!";
+                    container.appendChild(gameOver);
+                };
+                winnerContainer.innerText = "Game Over!";
+                container.appendChild(winnerContainer);
+            };
         }
     };
     rock.addEventListener("click", () => playRound("rock", getComputerChoice()));
