@@ -17,7 +17,11 @@ container.appendChild(scissors);
 
 
 
-function getComputerChoice(min, max) {
+
+
+function getComputerChoice() {
+    let min = 1;
+    let max = 3;
     let computerChoice =  Math.floor(Math.random() * (max - min + 1) + min);
     if (computerChoice === 1) {
         let finalComputerChoice = "rock";
@@ -52,6 +56,7 @@ function getUserChoice() {
 function playGame() {
     let humanScore = 0;
     let computerScore = 0;
+    
     function playRound(userChoice, getComputerChoice) {
         if (userChoice == "rock" && getComputerChoice == "rock") {
             console.log("Tie!");
@@ -105,6 +110,9 @@ function playGame() {
             console.log(`Computer Score: ${computerScore}`);
         }
     };
+    rock.addEventListener("click", () => playRound("rock", getComputerChoice()));
+    paper.addEventListener("click", () => playRound("paper", getComputerChoice()));
+    scissors.addEventListener("click", () => playRound("scissors", getComputerChoice()));
     
 };
 playGame();
